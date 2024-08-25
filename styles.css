@@ -1,0 +1,199 @@
+body {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100vh;
+    overflow: auto;
+    background-color: rgb(220, 238, 244);
+ }
+
+ .main {
+   display: flex;
+   flex-direction: column;
+ }
+
+ h1, h3, a {
+   text-align: center;
+   font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+ }
+
+ #paragraph {
+   width: 500px;
+   font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+ }
+
+ #start, #join-button {
+   margin: 10px;
+   background-color: #008000;
+    /* width: 40px; */
+    /* height: 20px; */
+    border-radius: 3px;
+    border: 2px solid black;
+    font-size: 14px;
+    /* transition-duration: 0.4s; */
+    color: white;
+    text-align: center;
+    padding: 10px 10px;
+    display: flex;
+    align-items: center;
+ }
+
+ #start:hover, #join-button:hover {
+   opacity: 0.5;
+   color: green;
+   background-color: white;
+   transition-duration: 0.4s;
+   border: 1px solid grey;
+}
+
+#enter-game-id {
+    margin: 10px;
+    margin-right: 0px;
+    border: 2px solid black;
+    border-right: 0px;
+}
+
+#join-button {
+    margin-left: 0px;
+    border-left: 0px;
+}
+
+ #basics, #join {
+   display: flex;
+   justify-content: center;
+ }
+
+ #game {
+   display: flex;
+   align-items: flex-start;
+   justify-content: center;
+ }
+
+ #board-side {
+   display: flex;
+   flex-direction: column-reverse;
+   align-items: flex-start;
+ }
+
+ #wind-head {
+   display: flex;
+   justify-content: flex-end;
+ }
+
+ #dandelion {
+   align-self: center;
+   width: 50px;
+   height: 50px;
+   border: 0;
+   margin: 15px;
+ }
+
+ #wind {
+   align-self: center;
+   width:91.66px;
+   height: 75px;
+   border: 0;
+ }
+
+ #instructions {
+   display: flex;
+   align-items: center;
+   margin: 5px;
+   justify-content: center;
+ }
+
+ #reference:link {
+   color: #BE93D4;
+ }
+
+ #reference:visited {
+   color: #BE93D4;
+ }
+
+ .overall {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+ }
+
+ #compass-side {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    margin: 10px;
+ }
+
+ #compass {
+    width: 175px;
+    height: 175px;
+ }
+
+ #buttons {
+    /*border: 2px solid red;*/
+    margin: 10px;
+    width: 150px;
+    height: 150px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: flex-start;
+ } 
+
+ button {
+    background-color: #008000;
+    /* width: 40px; */
+    /* height: 20px; */
+    border-radius: 3px;
+    border: 1px solid green;
+    font-size: 12px;
+    /* transition-duration: 0.4s; */
+    margin: 2px;
+    color: white;
+    text-align: center;
+    padding: 10px 10px;
+    display: flex;
+    align-items: center;
+ }
+
+ button:hover {
+    opacity: 0.5;
+    color: green;
+    background-color: white;
+    transition-duration: 0.4s;
+    border: 1px solid grey;
+ }
+
+ button.disabled {
+    opacity: 0.5;
+    color: green;
+    background-color: white;
+    transition-duration: 0.4s;
+    border: 1px solid grey;
+    cursor: not-allowed;
+ }
+
+ #board {
+    width: 320px;
+    height: 320px;
+    display: flex;
+    flex-wrap: wrap;
+ }
+
+ #test {
+    width: 100px;
+    height: 100px;
+ }
+ 
+ img {
+    width: 60px;
+    height: 60px;
+    border: 2px solid grey;
+ }
+
+ .footer {
+    text-align: center;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #eeeeee;
+    color: grey;
+ }
