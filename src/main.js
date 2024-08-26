@@ -12,9 +12,9 @@ let turns = 0;
 let ws;
 
 const CellState = {
-    EMPTY: 'public/white.png',
-    DANDELION: 'public/green-asterisk.png',
-    SEED: 'public/green-dot.png'
+    EMPTY: '/white.png',
+    DANDELION: '/green-asterisk.png',
+    SEED: '/green-dot.png'
 }
 
 const PlayerRole = {
