@@ -154,7 +154,7 @@ function loaded() {
     function connectToWebSocket(roomId) {
         console.log(`Room ID: ${roomId}`);
         
-        const uri = "wss://k5fc15wo29.execute-api.us-east-1.amazonaws.com/dev";
+        const uri = import.meta.env.VITE_WEBSOCKET_URI;
         ws = new WebSocket(uri);
         
         ws.onopen = (e) => {
@@ -260,7 +260,7 @@ function loaded() {
         }
         // Check if the roomId exists in the database
         try {
-            const response = await fetch(`https://glf3kwiynd.execute-api.us-east-1.amazonaws.com/dev/roomInfoExists?roomId=${encodeURIComponent(roomId)}`, { 
+            const response = await fetch(`${import.meta.env.VITE_API_ENDPOINT}/roomInfoExists?roomId=${encodeURIComponent(roomId)}`, { 
                 method: 'GET'
             });
 
@@ -312,48 +312,9 @@ function loaded() {
                     send(`turn: ${dandelionTurns}`);
                     images[i].removeEventListener("click", onMouseClick);
                     images[i].setAttribute('src', CellState.DANDELION);
-                    // if (isGameOver()) {
-                    //     gameOver();
-                    // }
-                    // else {
-                    //     directions.innerText = 'It\'s the wind\'s turn! Choose a direction to blow.';
-                    // }
-                    // dandelionTurn = false;
-                    // windTurn = true;
                 }    
             }
         }
-    
-        // // checks if the board is filled
-        // function boardFilled() {
-        //     var counter = 0;
-        //     for (let i = 0; i < 25; i++) {
-        //         if (images[i].getAttribute('src') === CellState.EMPTY) {
-        //             counter++;
-        //         }
-        //     }
-        //     return (counter === 0);
-        // }
-    
-        // // checks if the game is over
-        // function isGameOver() {
-        //     return (boardFilled() || turns === 7);
-        // }
-    
-        // // completes next steps after game is over
-        // function gameOver() {
-        //     if (boardFilled() || turns === 7) {
-        //         for (let j = 0; j < buttons.length; j++) {
-        //             buttons[j].classList.add('disabled');
-        //         }
-        //     }
-        //     if (boardFilled()) {
-        //         setDirections('The dandelion won!');
-        //     }
-        //     else if (turns === 7) {
-        //         setDirections('The wind won!');
-        //     }
-        // }
     }  
 }
 
