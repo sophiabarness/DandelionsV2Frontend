@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Dandelion Game</title>
+    <link rel="icon" href="/assets/green-asterisk-CGjJqr8J.png"/> 
+    <script type="module" crossorigin src="/assets/index-9f9Wf7ND.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-FDq7R7qK.css">
+  </head>
+  <body>
+    <div class="main"></div>
+        <h1 id="game-title">Dandelions</h1>
+        <a id='instructions' href = "https://mathwithbaddrawings.com/wp-content/uploads/2020/06/game-5-dandelions-1.pdf" target="_blank">Instructions</a>
+        <div id="basics">
+            <input type="button" value="Start New Game" id="start"/>
+        </div>
+        <div id="join">
+            <input type="text" id="enter-game-id" placeholder="Enter Game ID"/>
+            <input type="button" value="Join Game" id="join-button"/>
+        </div>
+        <h3 id="directions"></h3>
+        <div id="output">
+        </div>
+        <div id="game">
+            <div id="compass-side">
+                <div id="wind-head">
+                  <h3>Wind</h3>
+                  <img id="wind" src="/assets/wind-clipart-DuYCMtRX.png">
+                </div>
+                <div id="compass"></div>
+                <div id="buttons">
+                    <button id="0" class="disabled">N</button>
+                    <button id="1" class="disabled">NE</button>
+                    <button id="2" class="disabled">E</button>
+                    <button id="3" class="disabled">SE</button>
+                    <button id="4" class="disabled">S</button>
+                    <button id="5" class="disabled">SW</button>
+                    <button id="6" class="disabled">W</button>
+                    <button id="7" class="disabled">NW</button>
+                </div>
+            </div>
+            <div id="board-side">
+              <div id="board"></div>
+              <img id="dandelion" src="/assets/dandelion-BkqQTLAN.png">
+            </div>
+        </div>
+    </div>
+    <div class="footer">Made with ♥ by <a id="reference" href="https://github.com/sophiabarness">
+      Sophia Barnes</a>. Inspired from Math with Bad Drawings.</div>
+  </body>
+</html>

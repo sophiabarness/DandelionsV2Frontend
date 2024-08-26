@@ -1,13 +1,15 @@
-const ROOM_ID_LENGTH = 10;
+import Two from 'two.js';
 
+const ROOM_ID_LENGTH = 10;
 let roomId = "";
 let playerRole = "";
 let otherPlayerRole = "";
-let message = "";
 let readyToPlay = false;
+let message = "";
 let dandelionTurn = false;
 let windTurn = false;
 let turns = 0;
+let ws;
 
 const CellState = {
     EMPTY: 'public/white.png',
@@ -100,11 +102,8 @@ function loaded() {
         directions.innerText = message;
     }
 
-    function write(msg) {
-        output.innerHTML += msg + "<br>";
-    }
-
-    function enterGame() {
+    async function enterGame() {
+        await waitForWebSocket();
         ws.send(`{ "action": "entergame", "data": "${roomId}"}`);
     }
 
@@ -232,7 +231,6 @@ function loaded() {
                     }
                 }
             }
-            write(decodeURI(e.data));
         };
         
         ws.onclose = (e) => {
@@ -294,7 +292,7 @@ function loaded() {
         for (let i = 0; i < windButtons.length; i++) {
             windButtons[i].addEventListener('click', windClick);
             function windClick() {
-                notClickable = windButtons[i].classList.contains('disabled');
+                let notClickable = windButtons[i].classList.contains('disabled');
                 if (windTurn && !notClickable && playerRole === PlayerRole.WIND) {
                     send(`turn: ${i}`);
                     // Disable the wind buttons for dandelion's turn. 
